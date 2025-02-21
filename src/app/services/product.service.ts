@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Product } from '../models/product.model';
 
@@ -12,11 +13,19 @@ export class ProductService {
     { id: 3, name: 'Product 3', description: "This is the third product.", price: "$3,000", imageURL: '/assets/product3.jpg'}
   ];
 
+  private apiUrl = 'api'; // Add your API base URL here
+
+  constructor(private http: HttpClient) {} // Add HttpClient injection
+
   getProducts(): Observable<Product[]> {
     return of(this.products);
   }
 
   getProductById(id: number): Observable<Product | undefined> {
     return of(this.products.find(product => product.id === id));
+  }
+
+  getProduct(id: number): Observable<Product> {
+    return of(this.products.find(product => product.id === id)!);
   }
 }

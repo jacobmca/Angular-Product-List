@@ -1,0 +1,45 @@
+.product-detail {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 55px;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 10px;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .description {
+      font-size: 15px;
+      color: black;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      margin: 10px 0;
+  }
+  
+  .price {
+      font-size: 40px;
+      color: black;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      margin-top: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #ccf2ff;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+  }
+
+  button:hover {
+    background-color: white;
+    cursor: pointer;
+  }

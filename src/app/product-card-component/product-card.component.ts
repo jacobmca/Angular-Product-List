@@ -6,14 +6,22 @@ import { Product } from '../models/product.model';
   selector: 'app-product-card',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './product-card.component.html',
-  styleUrls: ['./product-card.component.css']
+  template: `
+    <div class="product-card">
+      <h3>{{product.name}}</h3>
+      <img [src]="product.imageURL" [alt]="product.name">
+      <p>{{product.description}}</p>
+      <p class="price">{{product.price}}</p>
+      <button (click)="onMoreInfo()">More Information</button>
+    </div>
+  `,
+  styleUrl: './product-card.component.css'
 })
 export class ProductCardComponent {
   @Input() product!: Product;
-  @Output() remove = new EventEmitter<number>();
+  @Output() moreInfo = new EventEmitter<number>();
 
-  onRemove(): void {
-    this.remove.emit(this.product.id);
+  onMoreInfo(): void {
+    this.moreInfo.emit(this.product.id);
   }
 }

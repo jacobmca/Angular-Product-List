@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { Product } from '../models/product.model';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { ProductCardComponent } from '../product-card-component/product-card.component';
 
 @Component({
@@ -15,13 +16,21 @@ import { ProductCardComponent } from '../product-card-component/product-card.com
 export class ProductListComponent implements OnInit {
   products: Product[] = []
 
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe((data: Product[]) => this.products = data);
+    this.productService.getProducts().subscribe(
+      (data: Product[]) => {
+        this.products = data;
+        console.log('Products loaded:', this.products); // Add this for debugging
+      }
+    );
   }
 
-  removeProduct(productId: number): void {
-    this.products = this.products.filter(product => product.id !== productId);
+  onProductClick(productId: number): void {
+    this.router.navigate(['/products', productId]);
   }
 }
