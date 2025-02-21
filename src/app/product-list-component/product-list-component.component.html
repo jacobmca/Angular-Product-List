@@ -1,8 +1,7 @@
-<h1>Product List</h1>
-<div class="product-grid">
-    <app-product-card 
-        *ngFor="let product of products"
-        [product]="product"
-        (remove)="removeProduct($event)">
-    </app-product-card>
-</div>
+<body>
+    <h1>Product List</h1>
+    <div class="product-grid">
+        <app-product-card *ngFor="let product of products" [product]="product" (remove)="removeProduct($event)">
+        </app-product-card>
+    </div>
+</body>

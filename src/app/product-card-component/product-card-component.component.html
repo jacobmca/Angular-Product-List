@@ -1,9 +1,7 @@
 <div class="product-card">
     <img [src]="product.imageURL" alt="{{ product.name }}" />
     <h3>
-        <a >
-            {{ product.name }}
-        </a>
+        {{ product.name }}
     </h3>
 
     <p>
@@ -11,10 +9,12 @@
     </p>
 
     <h4>
-        {{ product.price }}
+        Price: {{ product.price }}
     </h4>
     
-    <button (click)="onRemove()">
-        Remove
-    </button>
+    <div class="button-container">
+        <button (click)="onRemove()">
+            Remove
+        </button>
+    </div>
 </div>
