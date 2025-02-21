@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductService } from '..services/product.service';
 import { Product } from '../models/product.model';
 
@@ -16,5 +16,9 @@ export class ProductListComponentComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe(data => this.products = data);
+  }
+
+  removeProduct(productId: number): void {
+    this.products = this.products.filter(product => product.id !== productId);
   }
 }

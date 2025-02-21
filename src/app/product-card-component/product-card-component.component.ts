@@ -9,4 +9,9 @@ import { Product } from '../models/product.model';
 })
 export class ProductCardComponentComponent {
   @Input() product!: Product;
+  @Output() remove = new EventEmitter<number>();
+
+  onRemove(): void {
+    this.remove.emit(this.product.id);
+  }
 }
