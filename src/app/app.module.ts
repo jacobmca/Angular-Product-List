@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
+import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
-import { ProductCardComponent } from './product-card/product-card.component';
-import { ProductListComponent } from './product-list/product-list.component';
+import { ProductCardComponent } from './product-card-component/product-card-component.component';
+import { ProductListComponent } from './product-list-component/product-list-component.component';
 
 @NgModule({
     declarations: [
@@ -13,7 +13,7 @@ import { ProductListComponent } from './product-list/product-list.component';
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule
+        CommonModule
     ],
     providers: [],
     bootstrap: [AppComponent]
